@@ -1,2 +1,2 @@
 # minesweeperJSwing
-An attempt at recreating a classic game with Java Swing.
+An attempt at recreating the minesweeper game with Java Swing.
