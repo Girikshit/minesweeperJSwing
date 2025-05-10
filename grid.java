@@ -1,15 +1,17 @@
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class grid {
 	int rowSize;
 	int colSize;
 	JFrame frame;
 	box[][] table;
-	
+	boolean deathscreen= false;
+
 	public grid(int row, int col) {
 		this.rowSize=row;
 		this.colSize=col;
@@ -18,6 +20,7 @@ public class grid {
 		frame=new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(500,500);
+		frame.setLocationRelativeTo(null);
 		frame.setLayout(new GridLayout(row,col));
 		frame.setTitle("Minesweeper");
 		frame.setResizable(true);
@@ -202,4 +205,12 @@ public class grid {
         }
 		return b;
 	}
+
+	public void setDeathScreen() {
+		if(!deathscreen){
+			new DeathScreen(this);
+			deathscreen= true;
+		}
+	}
+
 }

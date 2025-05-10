@@ -115,8 +115,8 @@ public class box implements ActionListener {
     	
     }
     
-    public ImageIcon getIcon(int bcount) {
-    	switch(bcount){
+    public ImageIcon getIcon(int bombcount) {
+    	switch(bombcount){
     		case 0:return i0;
 	    	case 1: return i1;
 	    	case 2:return i2;
@@ -156,7 +156,8 @@ public class box implements ActionListener {
 			g.displayFrame();
 			if (this.isBomb()) {
 				this.button.setIcon(i9);
-				//this.button.setBackground(Color.BLACK);
+				g.setDeathScreen();
+
 			}else {
 				if (this.bombcount!=0) {
 					//this.button.setBackground(Color.BLUE);
